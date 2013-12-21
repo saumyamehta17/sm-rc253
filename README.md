@@ -54,5 +54,3 @@ rails s
 
 
 
-imagemagic need to install
-rmagick

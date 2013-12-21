@@ -3,7 +3,7 @@
 <p>
   <strong>Painting:</strong>
   <%= @gallery.painting %>
-  <%= image_tag @gallery.image_url(:thumb) %>
+  <%= image_tag @gallery.image_url(:large) %>
 </p>
 
 <%= link_to 'Edit', edit_gallery_path(@gallery) %> |

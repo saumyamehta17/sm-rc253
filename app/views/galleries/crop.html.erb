@@ -1,0 +1,14 @@
+<h3>Crop Image</h3>
+<% content_for(:head) do %>
+    <%= stylesheet_link_tag "jquery.Jcrop" %>
+    <%= javascript_include_tag "jquery.Jcrop.min" %>
+
+<% end %>
+<%= image_tag @gallery.image_url(:large), id: "crop" %>
+
+<%= form_for @gallery do |f| %>
+    <% %w[x y w h].each do |attribute| %>
+        <%= f.text_field "crop_#{attribute}" , id: "crop_#{attribute}" %><br/>
+    <% end %>
+    <%= f.submit 'crop' %>
+<% end %>

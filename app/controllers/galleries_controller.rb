@@ -28,8 +28,13 @@ class GalleriesController < ApplicationController
 
     respond_to do |format|
       if @gallery.save
-        format.html { redirect_to @gallery, notice: 'Gallery was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @gallery }
+        if params[:gallery][:image].present?
+          render 'crop' and return
+        else
+          format.html { redirect_to @gallery, notice: 'Gallery was successfully created.' }
+          format.json { render action: 'show', status: :created, location: @gallery }
+        end
+
       else
         format.html { render action: 'new' }
         format.json { render json: @gallery.errors, status: :unprocessable_entity }
@@ -42,8 +47,12 @@ class GalleriesController < ApplicationController
   def update
     respond_to do |format|
       if @gallery.update(gallery_params)
-        format.html { redirect_to @gallery, notice: 'Gallery was successfully updated.' }
-        format.json { head :no_content }
+        if params[:gallery][:image].present?
+          render 'crop' and return
+        else
+          format.html { redirect_to @gallery, notice: 'Gallery was successfully updated.' }
+          format.json { head :no_content }
+        end
       else
         format.html { render action: 'edit' }
         format.json { render json: @gallery.errors, status: :unprocessable_entity }

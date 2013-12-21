@@ -1,5 +1,8 @@
+Railscast 253 and 182(revised)
+==============================
+
 Railscast 253
-=================
+---------------------
 CarrierWave
 ```
 We can use carrierwave instead of paperclip.bacause it can be used in sinatara or any other rake based ruby app.And can be used for mangodb. And it place
@@ -22,7 +25,7 @@ for now it is for gallery
 ```
 Now create uploader
 ```
-rails g uploader image(yhis is any name)
+rails g uploader image(this is any name)
 ```
 Now change migration for you scaffold for uploader
 ```
@@ -51,6 +54,15 @@ Rails server
 ```
 rails s
 ```
+
+Railscast 182
+----------------------------------
+
+see crop.html.erb
+see gallery.rb
+see ImageUploader
+
+
 
 
 

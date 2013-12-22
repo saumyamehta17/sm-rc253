@@ -5,7 +5,7 @@ class Gallery < ActiveRecord::Base
   after_update :crop_image
 
   def crop_image
-    
+
     image.recreate_versions! if crop_x.present?
   end
 end

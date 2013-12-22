@@ -6,7 +6,7 @@
 <% end %>
 <%= image_tag @gallery.image_url(:large), id: "crop" %><br/>
 
-<h3>preview</h3>
+<h3>see preview</h3>
 <%#= image_tag  @gallery.image_url(:large), id: "preview" %>
 <%= form_for @gallery do |f| %>
     <% %w[x y w h].each do |attribute| %>
